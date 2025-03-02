@@ -1,5 +1,5 @@
 
-// riscv_cpu.v - single-cycle RISC-V CPU Processor
+// riscv_cpu.v - Pipelined RISC-V CPU Processor
 
 module riscv_cpu (
     input         clk, reset,
