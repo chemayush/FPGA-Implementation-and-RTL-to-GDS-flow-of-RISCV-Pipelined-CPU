@@ -1,8 +1,19 @@
 # FPGA-Implementation-of-Pipelined-RISCV-Cpu
 
+Project Video Demo: https://www.youtube.com/watch?v=TH6pEtpBv0k
+
 # Overview
 - This project implements a 5-stage pipelined RISC-V CPU in Verilog, synthesized and tested on the PYNQ Z2 FPGA board. The CPU executes a custom Path Planning Algorithm that computes optimal routes on a predefined map. The algorithm is compiled to machine code, loaded into the CPU's instruction memory, and validated using FPGA hardware feedback (GREEN LED).
 - Further, the RISC-V CPU core has been fully implemented using the **OpenLane** automated ASIC flow, carrying out the Synthesis, Floorplanning and Placement, Clock Tree Synthesis, Routing, Static Timing Analysis, Power Analysis, GDSII generation.
+
+### Technologies
+- Xilinx Vivado is used for writing the RTL code, synthesis and implementation on the PYNQ Z2 FPGA. Behavioral simulation is also carried out.
+- Openlane is used for the entire ASIC flow. Following tools are used inside of the flow:
+  - ***Yosys*** is used for Synthesis.
+  - ***OpenROAD*** handles the floorplanning and generates optimized clock tree.
+  - ***TritonRoute*** performs the detailed routing of the design.
+  - ***OpenSTA*** carries out the timing and power analysis.
+  - ***Magic*** and ***KLayout*** is used for the DRC.
 
 # Key Features
 ### RISC-V CPU Core
