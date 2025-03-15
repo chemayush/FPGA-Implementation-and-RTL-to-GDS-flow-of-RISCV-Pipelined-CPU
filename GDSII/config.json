@@ -1,0 +1,11 @@
+{
+    "DESIGN_NAME": "pl_riscv_cpu",
+    "VERILOG_FILES": "dir::src/*.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 25.0,
+    "FP_PDN_MULTILAYER": true,
+    
+    "FP_CORE_UTIL": 50,
+    "PL_TARGET_DENSITY": 0.6
+
+}
