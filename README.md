@@ -37,6 +37,7 @@ the architecture has been referred from the Harris & Harris Book.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d7910232-4146-4720-bf42-cedc7cdbb285">
 </p>
+<p align="center"><strong>Figure 1:</strong> Pipelined RV32I Architecture</p>
 <!-- ![image](https://github.com/user-attachments/assets/d7910232-4146-4720-bf42-cedc7cdbb285) -->
 
 # Simulation and ILA
@@ -45,13 +46,13 @@ Simulation waveform shows the ***Instr*** values before and after the the ***cor
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d616c9d0-694b-43f0-9fda-25db49c76463" alt="Simulation waveform">
 </p>
-<p align="center"><strong>Figure 1:</strong> Simulation waveform.</p>
+<p align="center"><strong>Figure 2:</strong> Simulation waveform.</p>
 
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9843c1bb-edde-4eca-b08b-2b9a05070e13" alt="ILA waveform">
 </p>
-<p align="center"><strong>Figure 2:</strong> ILA waveform.</p>
+<p align="center"><strong>Figure 3:</strong> ILA waveform.</p>
 
 # GDSII Flow
 OpenLane is an Open Source toolchain which combines multiple tools to automate the RTL to GDSII flow. Below are analysis of different metrics at various stages.
@@ -87,7 +88,7 @@ OpenLane is an Open Source toolchain which combines multiple tools to automate t
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2c26c152-04d4-4f71-92aa-8898066c4b86">
 </p>
-<p align="center"><strong>Figure 3: </strong> Timing Report </p>
+<p align="center"><strong>Figure 4:</strong> Timing Report </p>
 
 
 ## 3. Power Analysis
@@ -106,10 +107,47 @@ OpenLane is an Open Source toolchain which combines multiple tools to automate t
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8a7ec5fb-1407-4e0d-8e1a-9f13e7ba51f0">
 </p>
-<p align="center"><strong>Figure 4: </strong>Power Density Heat Map</p>
+<p align="center"><strong>Figure 5:</strong> Power Density Heat Map</p>
 <!-- ![image](https://github.com/user-attachments/assets/8a7ec5fb-1407-4e0d-8e1a-9f13e7ba51f0) -->
 
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4e40206f-547f-4aab-8069-4b07c51c2e92">
+</p>
+<p align="center"><strong>Figure 6:</strong> Placement Density Heat Map</p>
+
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2ae5c83d-9eae-4046-901a-5da1075925a9">
+</p>
+<p align="center"><strong>Figure 6:</strong> Routing Congestion Heat Map</p>
+<!-- ![image](https://github.com/user-attachments/assets/2ae5c83d-9eae-4046-901a-5da1075925a9) -->
 
 ## 4. Other Metrics
 
+| **Metric**                | **Value**           | **Description**                                                                 |
+|---------------------------|---------------------|---------------------------------------------------------------------------------|
+| Cell Library              | `sky130_fd_sc_hd`   | Standard cell library used.                                                     |
+| Floorplan Dimensions      | `626.98 μm × 625.6 μm` | Width × Height of the floorplan.                                               |
+| Core Area                 | `0.3922 mm²`        | Available area for logic/macros within the die.                                 |
+| Design Area               | `0.2565 mm²`        | Actual area occupied by placed cells.                                           |
+| DIE Area                  | `0.4143 mm²`        | Total chip area (including I/Os and periphery).                                 |
+| Core Utilization          | **65.4%**           | (Design Area / Core Area) × 100.                                                |
+| Cell Density              | `110,393 cells/mm²` | Cells per mm² of the utilized core area                                        |
+
+| **Metric**                | **Value**           | **Description**                                                                 |
+|---------------------------|---------------------|---------------------------------------------------------------------------------|
+| Supply Voltage (VDD)      | `1.8 V`             | Nominal operating voltage.                                                      |
+| Average IR Drop (VDD)     | `0.294 mV`          | Average voltage drop across the power network.                                  |
+| Worst-Case IR Drop (VDD)  | `1.36 mV`           | Maximum localized voltage drop (critical path).                                 |
+| VDD % Drop                | `0.08%`             | (Worst-Case IR Drop / Supply Voltage) × 100.                                    |
+| Worst Ground Bounce (VSS) | `1.55 mV`           | Maximum voltage rise on ground network.                                         |
+| Average Ground Bounce     | `0.291 mV`          | Average voltage deviation from ideal ground (0 V).                              |
+| VSS % Deviation           | `0.09%`             | (Worst Ground Bounce / Supply Voltage) × 100.                                   |
+
+#### Takeaways:
+- IR drop is exceptionally low (`< 0.1%` of supply voltage), indicating a well-designed power distribution network (PDN).  
+- **65.4% core utilization** leaves adequate space (`34.6%`) for routing and timing optimization.  
+- High cell density (`110k cells/mm²`) reflects efficient area usage typical for the sky130 node.
+
+  
