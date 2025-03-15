@@ -1,4 +1,4 @@
-# FPGA-Implementation-of-Pipelined-RISCV-Cpu
+# FPGA Implementation and RTL2GDS flow of Pipelined RISCV CPU
 
 Project Video Demo: https://www.youtube.com/watch?v=TH6pEtpBv0k
 
@@ -34,5 +34,20 @@ Project Video Demo: https://www.youtube.com/watch?v=TH6pEtpBv0k
 
 # Architecture 
 the architecture has been referred from the Harris & Harris Book.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d7910232-4146-4720-bf42-cedc7cdbb285">
+</p>
+<!-- ![image](https://github.com/user-attachments/assets/d7910232-4146-4720-bf42-cedc7cdbb285) -->
 
-![image](https://github.com/user-attachments/assets/d7910232-4146-4720-bf42-cedc7cdbb285)
+# Simulation and ILA
+Simulation waveform shows the ***Instr*** values before and after the the ***correct*** signal goes high. We can verify its equality with the actual implementation's values visible in the ILA waveform.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d616c9d0-694b-43f0-9fda-25db49c76463" alt="Simulation waveform">
+</p>
+<p align="center"><strong>Figure 1:</strong> Simulation waveform.</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9843c1bb-edde-4eca-b08b-2b9a05070e13" alt="ILA waveform">
+</p>
+<p align="center"><strong>Figure 2:</strong> ILA waveform.</p>
