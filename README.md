@@ -56,10 +56,42 @@ Simulation waveform shows the ***Instr*** values before and after the the ***cor
 # GDSII Flow
 OpenLane is an Open Source toolchain which combines multiple tools to automate the RTL to GDSII flow. Below are analysis of different metrics at various stages.
 
-### Synthesis 
+## 1. Synthesis 
 
-### Timing Analysis
+| **Category**         | **Count** | **Cell Type**               | **Count** | **Cell Type**               | **Count** |
+|----------------------|-----------|-----------------------------|-----------|-----------------------------|-----------|
+| Wires                | 16895     | `$_ANDNOT_`                 | 1340      | `$_MUX_`                   | 11104     |
+| Wire bits            | 20807     | `$_AND_`                    | 91        | `$_NAND_`                  | 66        |
+| Public wires         | 163       | `$_NOR_`                    | 244       | `$_NOT_`                   | 2757      |
+| Public wire bits     | 3979      | `$_ORNOT_`                  | 108       | `$_OR_`                    | 1050      |
+| Memories             | 0         | `$_XNOR_`                   | 54        | `$_XOR_`                   | 167       |
+| Memory bits          | 0         | `sky130_fd_sc_hd__dfxtp_2`  | 3663      | `sky130_fd_sc_hd__dlxtn_1` | 37        |
+| Processes            | 0         |                             |           |                             |           |
+| Cells                | 20681     |                             |           |                             |           |
 
-### Power Analysis
 
-### Other Metrics
+
+## 2. Timing Analysis
+
+| **Metric**               | **Post-Synthesis (STA)** | **Post-PnR (STA)** | **Final (Post Opt.)**  | **Notes**                                                                 |
+|--------------------------|--------------------------|--------------------|------------------------|---------------------------------------------------------------------------|
+| **Worst Slack (Setup)**  | `9.35 ns`                | `8.88 ns`          | **`9.27 ns`**          | Positive slack = timing met. Final slack reflects post-optimization.      |
+| **Worst Slack (Hold)**   | `0.08 ns`                | `0.18 ns`          | **`0.35 ns`**          | Robust hold margin achieved in final design.                              |
+| **TNS (Total Neg Slack)**| `0.00 ns`                | `0.00 ns`          | `0.00 ns`              | No cumulative timing violations.                                          |
+| **WNS (Worst Neg Slack)**| `0.00 ns`                | `0.00 ns`          | `0.00 ns`              | All paths meet timing constraints.                                        |  
+
+**Final Performance**:  
+- **Minimum Clock Period**: `11.84 ns`  
+- **Maximum Clock Frequency**: **`84.45 MHz`** (achieved operational frequency).  
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2c26c152-04d4-4f71-92aa-8898066c4b86">
+</p>
+
+## 3. Power Analysis
+
+<!-- ![image](https://github.com/user-attachments/assets/2c26c152-04d4-4f71-92aa-8898066c4b86) -->
+
+
+## 4. Other Metrics
+
