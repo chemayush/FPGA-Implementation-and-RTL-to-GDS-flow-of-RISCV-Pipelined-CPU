@@ -1,0 +1,26 @@
+
+55. Printing statistics.
+
+=== pl_riscv_cpu ===
+
+   Number of wires:              16895
+   Number of wire bits:          20807
+   Number of public wires:         163
+   Number of public wire bits:    3979
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              20681
+     $_ANDNOT_                    1340
+     $_AND_                         91
+     $_MUX_                      11104
+     $_NAND_                        66
+     $_NOR_                        244
+     $_NOT_                       2757
+     $_ORNOT_                      108
+     $_OR_                        1050
+     $_XNOR_                        54
+     $_XOR_                        167
+     sky130_fd_sc_hd__dfxtp_2     3663
+     sky130_fd_sc_hd__dlxtn_1       37
+

@@ -1,0 +1,5 @@
+/openlane/designs/pl_riscv_cpu/src/pl_riscv_cpu.v:827: Warning: Identifier `\MemWrite' is implicitly declared.
+/openlane/designs/pl_riscv_cpu/src/pl_riscv_cpu.v:327: Warning: Identifier `\MemWriteE' is implicitly declared.
+/openlane/designs/pl_riscv_cpu/src/pl_riscv_cpu.v:328: Warning: Identifier `\ALUSrcE' is implicitly declared.
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+Warnings: 3 unique messages, 3 total

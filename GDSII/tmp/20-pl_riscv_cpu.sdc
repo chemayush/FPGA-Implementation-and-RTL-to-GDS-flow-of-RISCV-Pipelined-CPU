@@ -1,0 +1,91 @@
+###############################################################################
+# Created by write_sdc
+# Fri Mar 14 21:51:12 2025
+###############################################################################
+current_design pl_riscv_cpu
+###############################################################################
+# Timing Constraints
+###############################################################################
+create_clock -name clk -period 25.0000 [get_ports {clk}]
+set_clock_transition 0.1500 [get_clocks {clk}]
+set_clock_uncertainty 0.2500 clk
+set_propagated_clock [get_clocks {clk}]
+set_input_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {reset}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[0]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[10]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[11]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[12]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[13]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[14]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[15]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[16]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[17]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[18]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[19]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[1]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[20]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[21]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[22]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[23]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[24]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[25]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[26]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[27]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[28]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[29]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[2]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[30]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[31]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[3]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[4]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[5]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[6]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[7]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[8]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {Instr[9]}]
+set_output_delay 5.0000 -clock [get_clocks {clk}] -add_delay [get_ports {correct}]
+###############################################################################
+# Environment
+###############################################################################
+set_load -pin_load 0.0334 [get_ports {correct}]
+set_load -pin_load 0.0334 [get_ports {Instr[31]}]
+set_load -pin_load 0.0334 [get_ports {Instr[30]}]
+set_load -pin_load 0.0334 [get_ports {Instr[29]}]
+set_load -pin_load 0.0334 [get_ports {Instr[28]}]
+set_load -pin_load 0.0334 [get_ports {Instr[27]}]
+set_load -pin_load 0.0334 [get_ports {Instr[26]}]
+set_load -pin_load 0.0334 [get_ports {Instr[25]}]
+set_load -pin_load 0.0334 [get_ports {Instr[24]}]
+set_load -pin_load 0.0334 [get_ports {Instr[23]}]
+set_load -pin_load 0.0334 [get_ports {Instr[22]}]
+set_load -pin_load 0.0334 [get_ports {Instr[21]}]
+set_load -pin_load 0.0334 [get_ports {Instr[20]}]
+set_load -pin_load 0.0334 [get_ports {Instr[19]}]
+set_load -pin_load 0.0334 [get_ports {Instr[18]}]
+set_load -pin_load 0.0334 [get_ports {Instr[17]}]
+set_load -pin_load 0.0334 [get_ports {Instr[16]}]
+set_load -pin_load 0.0334 [get_ports {Instr[15]}]
+set_load -pin_load 0.0334 [get_ports {Instr[14]}]
+set_load -pin_load 0.0334 [get_ports {Instr[13]}]
+set_load -pin_load 0.0334 [get_ports {Instr[12]}]
+set_load -pin_load 0.0334 [get_ports {Instr[11]}]
+set_load -pin_load 0.0334 [get_ports {Instr[10]}]
+set_load -pin_load 0.0334 [get_ports {Instr[9]}]
+set_load -pin_load 0.0334 [get_ports {Instr[8]}]
+set_load -pin_load 0.0334 [get_ports {Instr[7]}]
+set_load -pin_load 0.0334 [get_ports {Instr[6]}]
+set_load -pin_load 0.0334 [get_ports {Instr[5]}]
+set_load -pin_load 0.0334 [get_ports {Instr[4]}]
+set_load -pin_load 0.0334 [get_ports {Instr[3]}]
+set_load -pin_load 0.0334 [get_ports {Instr[2]}]
+set_load -pin_load 0.0334 [get_ports {Instr[1]}]
+set_load -pin_load 0.0334 [get_ports {Instr[0]}]
+set_driving_cell -lib_cell sky130_fd_sc_hd__inv_2 -pin {Y} -input_transition_rise 0.0000 -input_transition_fall 0.0000 [get_ports {clk}]
+set_driving_cell -lib_cell sky130_fd_sc_hd__inv_2 -pin {Y} -input_transition_rise 0.0000 -input_transition_fall 0.0000 [get_ports {reset}]
+set_timing_derate -early 0.9500
+set_timing_derate -late 1.0500
+###############################################################################
+# Design Rules
+###############################################################################
+set_max_transition 0.7500 [current_design]
+set_max_fanout 10.0000 [current_design]
