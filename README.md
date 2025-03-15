@@ -26,9 +26,9 @@ Project Video Demo: https://www.youtube.com/watch?v=TH6pEtpBv0k
 
 ### Path Planning Algorithm
 
-- DFS based path planning algorithm a particular graph.
+- **DFS-based Path Planning Algorithm** applied on a particular graph (defined in the [Path Planner C program](https://github.com/chemayush/FPGA-Implementation-and-RTL-to-GDS-of-RISCV-Pipelined-CPU/blob/main/path_planner/path_planner.c)).
 
-- Start/end points stored in data memory at predefined (defined in the C program) addresses.
+- Start/end points stored in data memory at predefined (defined in the [Path Planner C program](https://github.com/chemayush/FPGA-Implementation-and-RTL-to-GDS-of-RISCV-Pipelined-CPU/blob/main/path_planner/path_planner.c)) addresses.
 
 - Computed path stored back to data memory for verification.
 
