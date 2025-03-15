@@ -73,12 +73,12 @@ OpenLane is an Open Source toolchain which combines multiple tools to automate t
 
 ## 2. Timing Analysis
 
-| **Metric**               | **Post-Synthesis (STA)** | **Post-PnR (STA)** | **Final (Post Opt.)**  | **Notes**                                                                 |
-|--------------------------|--------------------------|--------------------|------------------------|---------------------------------------------------------------------------|
-| **Worst Slack (Setup)**  | `9.35 ns`                | `8.88 ns`          | **`9.27 ns`**          | Positive slack = timing met. Final slack reflects post-optimization.      |
-| **Worst Slack (Hold)**   | `0.08 ns`                | `0.18 ns`          | **`0.35 ns`**          | Robust hold margin achieved in final design.                              |
-| **TNS (Total Neg Slack)**| `0.00 ns`                | `0.00 ns`          | `0.00 ns`              | No cumulative timing violations.                                          |
-| **WNS (Worst Neg Slack)**| `0.00 ns`                | `0.00 ns`          | `0.00 ns`              | All paths meet timing constraints.                                        |  
+| **Metric**               | **Post-Synthesis STA**   | **Post-PnR STA**   | **Final (Post Opt.) STA**  | **Notes**                                                                 |
+|--------------------------|--------------------------|--------------------|----------------------------|---------------------------------------------------------------------------|
+| **Worst Slack (Setup)**  | `9.35 ns`                | `8.88 ns`          | **`9.27 ns`**              | Positive slack = timing met. Final slack reflects post-optimization.      |
+| **Worst Slack (Hold)**   | `0.08 ns`                | `0.18 ns`          | **`0.35 ns`**              | Robust hold margin achieved in final design.                              |
+| **TNS (Total Neg Slack)**| `0.00 ns`                | `0.00 ns`          | `0.00 ns`                  | No cumulative timing violations.                                          |
+| **WNS (Worst Neg Slack)**| `0.00 ns`                | `0.00 ns`          | `0.00 ns`                  | All paths meet timing constraints.                                        |  
 
 **Final Performance**:  
 - **Minimum Clock Period**: `11.84 ns`  
@@ -87,10 +87,28 @@ OpenLane is an Open Source toolchain which combines multiple tools to automate t
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2c26c152-04d4-4f71-92aa-8898066c4b86">
 </p>
+<p align="center"><strong>Figure 3: </strong> Timing Report </p>
+
 
 ## 3. Power Analysis
 
-<!-- ![image](https://github.com/user-attachments/assets/2c26c152-04d4-4f71-92aa-8898066c4b86) -->
+
+
+| Group           | Internal Power (W) | Switching Power (W) | Leakage Power (W) | Total Power (W) | Percentage |
+|-----------------|--------------------|---------------------|-------------------|-----------------|------------|
+| **Sequential**  | 7.35e-03           | 1.13e-03            | 3.01e-08          | 8.48e-03        | 22.0%      |
+| **Combinational**| 8.06e-03          | 1.32e-02            | 7.95e-08          | 2.12e-02        | 55.1%      |
+| **Clock**       | 4.61e-03           | 4.19e-03            | 4.03e-08          | 8.80e-03        | 22.9%      |
+| **Macro**       | 0.00e+00           | 0.00e+00            | 0.00e+00          | 0.00e+00        | 0.0%       |
+| **Pad**         | 0.00e+00           | 0.00e+00            | 0.00e+00          | 0.00e+00        | 0.0%       |
+| **Total**       | **2.00e-02**       | **1.85e-02**        | **1.50e-07**      | **3.85e-02**    | **100.0%** |
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8a7ec5fb-1407-4e0d-8e1a-9f13e7ba51f0">
+</p>
+<p align="center"><strong>Figure 4: </strong>Power Density Heat Map</p>
+<!-- ![image](https://github.com/user-attachments/assets/8a7ec5fb-1407-4e0d-8e1a-9f13e7ba51f0) -->
+
 
 
 ## 4. Other Metrics
