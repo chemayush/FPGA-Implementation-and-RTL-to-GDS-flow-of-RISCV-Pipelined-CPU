@@ -47,7 +47,19 @@ Simulation waveform shows the ***Instr*** values before and after the the ***cor
 </p>
 <p align="center"><strong>Figure 1:</strong> Simulation waveform.</p>
 
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9843c1bb-edde-4eca-b08b-2b9a05070e13" alt="ILA waveform">
 </p>
 <p align="center"><strong>Figure 2:</strong> ILA waveform.</p>
+
+# GDSII Flow
+OpenLane is an Open Source toolchain which combines multiple tools to automate the RTL to GDSII flow. Below are analysis of different metrics at various stages.
+
+### Synthesis 
+
+### Timing Analysis
+
+### Power Analysis
+
+### Other Metrics
